@@ -47,7 +47,7 @@ mongoose
     console.log("Connect Db success!");
   })
   .catch((err) => {
-    // console.log(err);
+    console.log('connect error', err);
   });
 
 server.listen(port, () => {
