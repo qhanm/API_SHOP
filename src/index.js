@@ -40,7 +40,7 @@ app.use(cookieParser());
 routes(app);
 
 mongoose.set("strictQuery", true);
-
+console.log('env', process.env.MONGO_DB);
 mongoose
   .connect(`${process.env.MONGO_DB}`)
   .then(() => {
