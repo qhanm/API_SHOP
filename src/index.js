@@ -31,16 +31,20 @@ const port = process.env.PORT || 3001;
 app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
-app.use(express.urlencoded({ limit: "50mb" }));
+app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json());
+// app.use(express.urlencoded({ extended: true }))
+
 app.use(cookieParser());
 
 routes(app);
 
+mongoose.set("strictQuery", true);
+
 mongoose
   .connect(`${process.env.MONGO_DB}`)
   .then(() => {
-    // console.log("Connect Db success!");
+    console.log("Connect Db success!");
   })
   .catch((err) => {
     // console.log(err);

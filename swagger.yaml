@@ -383,7 +383,7 @@ paths:
           description: ALREADY_EXIST
         "400":
           description: INVALID
-  
+
   /api/auth/update-device:
     post:
       tags:
@@ -2660,7 +2660,7 @@ paths:
           description: id of location product (if multiple add | )
           required: false
           schema:
-              type: string
+            type: string
         - name: status
           in: query
           description: status of product (0 | 1)
@@ -2888,7 +2888,7 @@ paths:
           description: id of location product (if multiple add | )
           required: false
           schema:
-              type: string
+            type: string
         - name: minPrice
           in: query
           description: min price of product
@@ -3382,7 +3382,7 @@ paths:
           description: INVALID
       security:
         - bearerAuth: []
-  
+
   /api/orders/status/{orderId}:
     post:
       tags:
@@ -3410,7 +3410,7 @@ paths:
                 isPaid:
                   type: boolean
                   example: 1
-                status: 
+                status:
                   type: number
                   example: 0 | 1 | 2 | 3
           application/xml:
@@ -3423,7 +3423,7 @@ paths:
                 isPaid:
                   type: boolean
                   example: 1
-                status: 
+                status:
                   type: number
                   example: 0 | 1 | 2 | 3
           application/x-www-form-urlencoded:
@@ -3436,7 +3436,7 @@ paths:
                 isPaid:
                   type: boolean
                   example: 1
-                status: 
+                status:
                   type: number
                   example: 0 | 1 | 2 | 3
       responses:
@@ -3673,7 +3673,7 @@ paths:
           description: INVALID
       security:
         - bearerAuth: []
-  
+
   /api/orders/me/{orderId}:
     get:
       tags:
@@ -4323,7 +4323,7 @@ paths:
         - bearerAuth: []
 
   /api/comments/public:
-   get:
+    get:
       tags:
         - comments
       summary: get list public comment
@@ -4508,7 +4508,7 @@ paths:
           description: INVALID
       security:
         - bearerAuth: []
-  
+
   /api/comments/reply:
     post:
       tags:
@@ -4845,7 +4845,7 @@ paths:
           description: INVALID
       security:
         - bearerAuth: []
-  
+
   /api/report/user-type/count:
     get:
       tags:
@@ -5011,7 +5011,7 @@ paths:
       tags:
         - notifications
       summary: Get all notification for every user login
-      description:  Get all notification for every user login
+      description: Get all notification for every user login
       operationId: getAllNotification
       parameters:
         - name: limit
@@ -5065,7 +5065,7 @@ paths:
           description: INVALID
       security:
         - bearerAuth: []
-  
+
   /api/notifications/{notificationId}:
     delete:
       tags:
@@ -5258,7 +5258,7 @@ paths:
           description: INVALID
       security:
         - bearerAuth: []
-  
+
   /api/payment/vnpay/vnpay_ipn:
     get:
       tags:
@@ -5266,7 +5266,7 @@ paths:
       summary: Get status payment vn pay
       description: get status payment vn pay
       operationId: getStatusVNPay
-    
+
       parameters:
         - name: vnp_TxnRef
           in: path
